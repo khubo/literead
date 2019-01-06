@@ -1,12 +1,12 @@
 import React from 'react';
-import { InputGroup, Input, InputGroupAddon, Button } from 'reactstrap';
+import { InputGroup, Input, Button } from 'reactstrap';
 import styled from 'styled-components';
 
 const SearchBar = () => (
   <SearchWrapper>
     <InputGroup>
       <Input placeholder="Search for books you nerd..." />
-      <Button addonType="append">Search</Button>
+      <Button>Search</Button>
     </InputGroup>
   </SearchWrapper>
 );
