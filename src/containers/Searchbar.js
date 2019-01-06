@@ -30,5 +30,5 @@ const SearchWrapper = styled.div`
   margin: 50px auto;
   text-align: center;
   box-shadow: 2px;
-  width: 50%;
+  width: 80%;
 `;

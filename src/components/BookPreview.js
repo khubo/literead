@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const BookPreview = ({ book }) => (
   <BookWrapper>
-    <Img src={book.imageLinks.smallThumbnail} />
+    <Img src={book.imageLinks && book.imageLinks.smallThumbnail} />
     <span> {book.title}</span>
   </BookWrapper>
 );

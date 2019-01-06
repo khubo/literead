@@ -15,7 +15,7 @@ class BookList extends React.Component {
     return (
       <ContentWrapper>
         {books.map(book => (
-          <BookPreview book={book} />
+          <BookPreview book={book} key={book.id} />
         ))}
       </ContentWrapper>
     );
