@@ -1,22 +1,43 @@
 import React from 'react';
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle
+} from 'reactstrap';
 import styled from 'styled-components';
 
 const BookPreview = ({ book }) => (
-  <BookWrapper>
-    <Img src={book.imageLinks && book.imageLinks.smallThumbnail} />
-    <span> {book.title}</span>
-  </BookWrapper>
+  <div>
+    <CardWrapper>
+      <CardImg
+        top
+        width="100%"
+        alt="book image"
+        src={book.imageLinks && book.imageLinks.smallThumbnail}
+        height="inherit"
+      />
+      <CardBody>
+        <Title> {book.title}</Title>
+        <CardSubtitle> {book.authors[0]}</CardSubtitle>
+      </CardBody>
+    </CardWrapper>
+  </div>
 );
 
 export default BookPreview;
 
-const BookWrapper = styled.div`
+const CardWrapper = styled.div`
   float: left;
-  width: 50%;
-  height: 300px;
+  width: 30%;
+  margin: 50px;
+  height: 350px;
 `;
 
-const Img = styled.img`
+const Title = styled(CardTitle)`
   display: block;
-  height: 200px;
+  font-size: 15x;
+  font-weight: 600;
 `;
