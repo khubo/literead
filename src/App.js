@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Navbar from './containers/Navbar';
 import Searchbar from './containers/Searchbar';
+import BookList from './containers/BookList';
 
 import './App.css';
 
@@ -12,6 +13,7 @@ class App extends Component {
       <MainWrapper>
         <Navbar />
         <Searchbar />
+        <BookList />
       </MainWrapper>
     );
   }

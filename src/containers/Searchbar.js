@@ -1,17 +1,30 @@
 import React from 'react';
-import { InputGroup, Input, Button } from 'reactstrap';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { InputGroup, Input, Button } from 'reactstrap';
 
-const SearchBar = () => (
-  <SearchWrapper>
-    <InputGroup>
-      <Input placeholder="Search for books you nerd..." />
-      <Button>Search</Button>
-    </InputGroup>
-  </SearchWrapper>
-);
+import { searchBooks } from '../actions/books';
 
-export default SearchBar;
+const SearchBar = ({ searchBooks }) => {
+  const search = () => {
+    let book = document.getElementById('search').value;
+    searchBooks(book);
+  };
+
+  return (
+    <SearchWrapper>
+      <InputGroup>
+        <Input placeholder="Search for books you nerd..." id="search" />
+        <Button onClick={search}>Search</Button>
+      </InputGroup>
+    </SearchWrapper>
+  );
+};
+
+export default connect(
+  null,
+  { searchBooks }
+)(SearchBar);
 
 const SearchWrapper = styled.div`
   margin: 50px auto;
