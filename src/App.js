@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import styled from 'styled-components';
+
+import Navbar from './containers/Navbar';
+import Searchbar from './containers/Searchbar';
+
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <MainWrapper>
+        <Navbar />
+        <Searchbar />
+      </MainWrapper>
     );
   }
 }
+
+const MainWrapper = styled.div`
+  padding: 0px;
+`;
 
 export default App;
