@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const BookPreview = ({ book }) => (
   <BookWrapper>
-    <img src={book.imageLinks.smallThumbnail} />
+    <Img src={book.imageLinks.smallThumbnail} />
     <span> {book.title}</span>
   </BookWrapper>
 );
@@ -12,4 +12,11 @@ export default BookPreview;
 
 const BookWrapper = styled.div`
   float: left;
+  width: 50%;
+  height: 300px;
+`;
+
+const Img = styled.img`
+  display: block;
+  height: 200px;
 `;

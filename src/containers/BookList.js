@@ -30,4 +30,6 @@ export default connect(
   null
 )(BookList);
 
-const ContentWrapper = styled.div``;
+const ContentWrapper = styled.div`
+  margin: 20px;
+`;
