@@ -15,6 +15,7 @@ const SearchBar = ({ searchBooks }) => {
     <SearchWrapper>
       <InputGroup>
         <Input
+          autofocus="true"
           onKeyPress={event => {
             if (event.key === 'Enter') {
               search();
