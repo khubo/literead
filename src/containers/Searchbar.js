@@ -14,7 +14,15 @@ const SearchBar = ({ searchBooks }) => {
   return (
     <SearchWrapper>
       <InputGroup>
-        <Input placeholder="Search for books you nerd..." id="search" />
+        <Input
+          onKeyPress={event => {
+            if (event.key === 'Enter') {
+              search();
+            }
+          }}
+          placeholder="Search for books you need..."
+          id="search"
+        />
         <Button onClick={search}>Search</Button>
       </InputGroup>
     </SearchWrapper>
