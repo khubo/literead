@@ -21,7 +21,7 @@ const BookPreview = ({ book }) => (
       />
       <CardBody>
         <Title> {book.title}</Title>
-        <CardSubtitle> {book.authors[0]}</CardSubtitle>
+        <CardSubtitle> {book.authors ? book.authors[0] : ''}</CardSubtitle>
       </CardBody>
     </CardWrapper>
   </div>
