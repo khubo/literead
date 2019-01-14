@@ -8,13 +8,25 @@ import { searchBooks } from '../actions/books';
 const SearchBar = ({ searchBooks }) => {
   const search = () => {
     let book = document.getElementById('search').value;
-    searchBooks(book);
+    if (book.trim()) {
+      searchBooks(book);
+    }
+  };
+  const handleKeypress = event => {
+    if (event.key === 'Enter') {
+      search();
+    }
   };
 
   return (
     <SearchWrapper>
       <InputGroup>
-        <Input placeholder="Search for books you nerd..." id="search" />
+        <Input
+          autoFocus={true}
+          onKeyPress={handleKeypress}
+          placeholder="Search for books you need..."
+          id="search"
+        />
         <Button onClick={search}>Search</Button>
       </InputGroup>
     </SearchWrapper>
