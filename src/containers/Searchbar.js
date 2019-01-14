@@ -8,7 +8,9 @@ import { searchBooks } from '../actions/books';
 const SearchBar = ({ searchBooks }) => {
   const search = () => {
     let book = document.getElementById('search').value;
-    searchBooks(book);
+    if (book.trim()) {
+      searchBooks(book);
+    }
   };
   const handleKeypress = event => {
     if (event.key === 'Enter') {
