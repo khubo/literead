@@ -8,6 +8,7 @@ import {
   CardSubtitle
 } from 'reactstrap';
 import styled from 'styled-components';
+import { getAllAuthorsNames } from '../helpers';
 
 const BookPreview = ({ book }) => (
   <div>
@@ -21,7 +22,7 @@ const BookPreview = ({ book }) => (
       />
       <CardBody>
         <Title> {book.title}</Title>
-        <CardSubtitle> {book.authors ? book.authors[0] : ''}</CardSubtitle>
+        <CardSubtitle> {getAllAuthorsNames(book.authors)}</CardSubtitle>
       </CardBody>
     </CardWrapper>
   </div>
@@ -31,7 +32,7 @@ export default BookPreview;
 
 const CardWrapper = styled.div`
   float: left;
-  width: 30%;
+  width: 10em;
   margin: 50px;
   height: 350px;
 `;

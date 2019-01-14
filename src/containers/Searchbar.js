@@ -10,16 +10,18 @@ const SearchBar = ({ searchBooks }) => {
     let book = document.getElementById('search').value;
     searchBooks(book);
   };
+  const handleKeypress = event => {
+    if (event.key === 'Enter') {
+      search();
+    }
+  };
 
   return (
     <SearchWrapper>
       <InputGroup>
         <Input
-          onKeyPress={event => {
-            if (event.key === 'Enter') {
-              search();
-            }
-          }}
+          autofocus="true"
+          onKeyPress={handleKeypress}
           placeholder="Search for books you need..."
           id="search"
         />
