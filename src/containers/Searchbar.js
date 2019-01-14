@@ -20,7 +20,7 @@ const SearchBar = ({ searchBooks }) => {
     <SearchWrapper>
       <InputGroup>
         <Input
-          autofocus="true"
+          autoFocus={true}
           onKeyPress={handleKeypress}
           placeholder="Search for books you need..."
           id="search"
